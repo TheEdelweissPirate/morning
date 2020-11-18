@@ -1,0 +1,46 @@
+<!-- {% load static %} -->
+<!DOCTYPE html>
+<html>
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://unpkg.com/purecss@1.0.1/build/pure-min.css" integrity="sha384-oAOxQR6DkCoMliIh8yFnu25d7Eq/PHS21PClpwjOTeU2jRSq11vu66rf90/cZr47" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://unpkg.com/purecss@1.0.1/build/grids-responsive-min.css">
+
+
+	<title>Morning</title>
+</head>
+
+<body bgcolor="#33FFD7">
+	<div class="pure-menu pure-menu-horizontal">
+    <ul class="pure-menu-list">
+    	<li class="pure-menu-item"><a href="/home" class="pure-menu-link">Home</a></li>
+        <li class="pure-menu-item"><a href="/todo" class="pure-menu-link">ToDo</a></li>
+        <li class="pure-menu-item"><a href="#" class="pure-menu-link">My Feed</a></li>
+        <li class="pure-menu-item"><a href="/positivity" class="pure-menu-link">Positivity</a></li>
+        <li class="pure-menu-item"><a href="#" class="pure-menu-link">Edit Goals</a></li>
+        {% if user.is_authenticated %}
+        	<li class="pure-menu-item"><a href="/profile" class="pure-menu-link">Profile</a></li>
+        	<li class="pure-menu-item"><a href="/logout" class="pure-menu-link">Log Out</a></li>
+        {% endif %}
+        
+        
+    </ul>
+
+
+
+	<div class="pure-g">
+
+		<img src="./media/morning-transparent.png">
+		<div class="pure-u-1 pure-u-md-1-3">
+
+				    
+	        			<h1>Good Morning, {{user.username}}!</h1>
+	    			
+	    			{% block content %}{% endblock %}
+					
+		</div>
+	</div>
+
+</div>
+</body>
+

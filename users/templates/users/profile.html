@@ -1,0 +1,20 @@
+{% extends "todo/base.html" %}
+
+{% block content %}
+
+	
+	<img class="pure-img" src="{{ user.profile.image.url }}" height="70" width="70">
+	<p>Update Profile</p>
+	<form method = "POST" enctype="multipart/form-data">
+	{% csrf_token %}
+	<fieldset class="form-group">
+	    <table> 
+	        {{ u_form.as_table }} 
+	        {{ p_form.as_table }} 
+	    </table>
+	        
+	    <button type="submit" class="pure-button pure-button-primary">Update</button>
+	</fieldset>
+	</form>
+
+{% endblock content %}

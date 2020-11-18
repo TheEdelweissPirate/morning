@@ -1,0 +1,17 @@
+{% extends "todo/base.html" %}
+
+{% block content %}
+	{% for entry in entries %}
+		<h1>Get this done, {{ entry.user}}</h1>
+		<h2>{{ entry.title }}</h2>
+		<p>{{ entry.desc }}</p>
+		<br>
+		<p1> posted on {{entry.date_posted}} </p1>
+		<br>
+		<p> due on {{entry.date_due}} </p>
+		<br>
+
+
+	{% endfor %}
+	<button type="submit" class="pure-button pure-button-primary"><a href="/todoform"> Add more tasks </button></a>
+{% endblock content %}

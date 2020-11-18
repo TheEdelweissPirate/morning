@@ -1,0 +1,13 @@
+{% extends "todo/base.html" %}
+
+{% block content %}
+
+	<h1>GET SET GO!</h1>
+	{% for goals in long_term_goals %}
+		
+		<p>{{goals.goal}}</p>
+
+
+	{% endfor %}
+	<button type="submit" class="pure-button pure-button-primary"><a href="/goalform">Add more goals</button></a>
+{% endblock content %}
